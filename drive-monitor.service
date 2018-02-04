@@ -1,0 +1,9 @@
+[Unit]
+Description=Drive usage and health monitor daemon
+
+[Service]
+ExecStart=/usr/local/sbin/drive-monitor start
+ExecStop=/usr/local/sbin/drive-monitor stop
+
+[Install]
+WantedBy=multi-user.target
