@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 ALERT=95
-ADMIN='markietachristopher@gmail.com'
 
 # Adapted from Gilles: https://unix.stackexchange.com/a/84359/48044
 message=$(df -h | awk -v ALERT="$ALERT" '
@@ -12,5 +11,5 @@ message=$(df -h | awk -v ALERT="$ALERT" '
     $5 >= ALERT {printf "%s is almost full: %d%%\n", $1, $5}
 ')
 if [ -n "$message" ]; then
-    echo "$message" | mail -S sendwait -s "Alert: Almost out of disk space" "$ADMIN"
+    echo "$message" | mail -S sendwait -s "Alert: Almost out of disk space" "$ADMIN_EMAIL"
 fi
