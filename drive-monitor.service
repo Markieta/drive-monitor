@@ -2,4 +2,5 @@
 Description=Drive usage and health monitor daemon
 
 [Service]
+EnvironmentFile=-/etc/environment
 ExecStart=/usr/local/sbin/drive-monitor
